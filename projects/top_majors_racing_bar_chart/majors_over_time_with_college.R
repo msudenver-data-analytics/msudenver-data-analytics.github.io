@@ -26,7 +26,7 @@ head(majors_formatted_wc)
 
 # creating list of colleges for loop
 colleges <- as.list(unique(majors_formatted_wc$College.Code))
-colleges <- colleges[colleges != "AA" & colleges != "0" & colleges != "SH" & colleges != "HS"]
+colleges <- colleges[colleges != "AA" & colleges != "0" & colleges != "SH"]
 
 # creating function for plotting and exporting animation
 racing_bar_chart <- function(data_set) {
