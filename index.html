@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MSU Denver Data & Analytics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rajdhani">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Email Icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body class="body" style="max-width:1600px">
+
+    <div class="row">
+        <nav class="sidebar collapse animate-left" style="z-index:3;width:250px;" id="mySidebar">
+
+            <a href="#" onclick="close_sidebar()" class="hide-large right jumbo padding" title="close menu">
+                <i class="fa fa-remove"></i>
+            </a>
+
+            <h1>Metropolitan State University of Denver</h1>
+            <h3>Data & Analytics</h3>
+            <p style="padding-right: 10px">Here you will find a handful of visualizations and animations created by the
+                <a href="https://www.msudenver.edu/business-intelligence">Business Intelligence</a> team
+                and the <a href="https://www.msudenver.edu/institutional-research">Office of Institutional Research</a>
+                at MSU Denver.
+            </p>
+            <h4>Team</h4>
+            <hr size="1px" width="95%" color="#666">
+            <a href="mailto:spetran1@msudenver.edu">
+                <div class="email-wrapper">
+                    <button class="material-symbols-outlined"
+                        style="font-size: 20px; border: 0ch; background-color: #fff;">mail</button>
+                    <h5>Sean Petranovich</h5>
+                </div>
+            </a>
+            <a href="mailto:ksmit258@msudenver.edu">
+                <div class="email-wrapper">
+                    <button class="material-symbols-outlined"
+                        style="font-size: 20px; border: 0ch; background-color: #fff;">mail</button>
+                    <h5>Kelsey Smith</h5>
+                </div>
+            </a>
+            <a href="mailto:nkoike@msudenver.edu">
+                <div class="email-wrapper">
+                    <button class="material-symbols-outlined"
+                        style="font-size: 20px; border: 0ch; background-color: #fff;">mail</button>
+                    <h5>Lucas Koike</h5>
+                </div>
+            </a>
+            <a href="mailto:jbarr14@msudenver.edu">
+                <div class="email-wrapper">
+                    <button class="material-symbols-outlined"
+                        style="font-size: 20px; border: 0ch; background-color: #fff;">mail</button>
+                    <h5>Jeff Barr</h5>
+                </div>
+            </a>
+            <a href="https://www.msudenver.edu/"><img src="/images/msu_logo.jpg"
+                    style="position:fixed; bottom:50px; width: 200px;"></a>
+            <p style="position:fixed; bottom:0px;">Website assembled by Kelsey Smith.</p>
+        </nav>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="overlay hide-large animate-opacity" onclick="close_sidebar()" style="cursor:pointer"
+            title="close side menu" id="myOverlay"></div>
+
+        <!-- Main page -->
+        <div class="main">
+            <header id="header">
+                <span class="button hide-large xxlarge" onclick="open_sidebar()"><i class="fa fa-bars"></i></span>
+                <h1>Projects</h1>
+            </header>
+            <p style="padding-left: 16px;">Use the buttons below to filter projects by content area.</p>
+            <hr size="1px" width="97.5%" color="#666">
+            <br>
+
+            <!-- Filter -->
+            <div id="filter-container">
+                <button class="filter-button active" onclick="filterSelection('all')"> Show all</button>
+                <button class="filter-button" onclick="filterSelection('enrollment')"> Enrollment</button>
+                <button class="filter-button" onclick="filterSelection('retention')"> Retention</button>
+                <button class="filter-button" onclick="filterSelection('graduation')"> Graduation</button>
+            </div><br>
+
+            <!-- Project Grid -->
+            <div class="row-padding">
+                <div class="project-box enrollment retention graduation">
+                    <a href="/projects/zig_zaggy_lives/index.html"><img src="/images/zz_lives.jpg" alt="Zig-Zaggy Lives"
+                            style="width:100%" class="hover-opacity"></a>
+                    <div class="text-container text-bg text-bg-hover">
+                        <p><b>Zig-Zaggy Lives</b></p>
+                        <p>This animation visualizes the path a cohort of students at MSU Denver takes over course of
+                            ten years.</p><br>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="/js/filter_script.js" type="text/javascript"></script>
