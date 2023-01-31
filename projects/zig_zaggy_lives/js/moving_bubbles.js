@@ -353,10 +353,10 @@ async function loadStudentDataAndInitalizeNodes(fileName) {
   // Wait for D3 to resolve the promise
   let loadedData = await d3.csv(`./data/${fileName}`, d3.autoType);
   let studentData = structuredClone(loadedData.filter(studentDataFilter));
-  if (studentData.length === 0) {
+  if (studentData.length < 5) {
     studentData = loadedData;
     resetDropdowns();
-    alert("No resulting data.");
+    alert("Insufficient results to display.");
   }
   // Sets the simulation rate based on the size of the data set
   if (studentData.length > 2000) {
