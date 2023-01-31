@@ -356,7 +356,7 @@ async function loadStudentDataAndInitalizeNodes(fileName) {
   if (studentData.length < 5) {
     studentData = loadedData;
     resetDropdowns();
-    alert("Insufficient results to display.");
+    alert("Insufficient results to display. Cohort must be at least five students.");
   }
   // Sets the simulation rate based on the size of the data set
   if (studentData.length > 2000) {
