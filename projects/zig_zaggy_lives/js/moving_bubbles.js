@@ -7,6 +7,7 @@ animStart = true;
 pauseSimulation = true;
 dataSetSwitched = true;
 debug = false;
+bubbleRadius = 4;
 
 d3.select("#transition-speed1 .spd").text(simulationRate / 1000);
 d3.select("#transition-speed2 .spd").text(simulationRate / 1000);
@@ -21,7 +22,6 @@ const width = 1200 - margin.left - margin.right;
 const height = 1100 - margin.top - margin.bottom;
 
 // Bubble stuff
-const bubbleRadius = 4; // Base radius of a bubble
 const bubblePadding = 1.4; // Collision detection uses this number times the radius of each bubble
 const bubbleRadiusVariance = 0.25 * bubbleRadius; // By how much the radius of a bubble can vary
 
@@ -358,13 +358,17 @@ async function loadStudentDataAndInitalizeNodes(fileName) {
     resetDropdowns();
     alert("Insufficient results to display. Cohort must be at least five students.");
   }
-  // Sets the simulation rate based on the size of the data set
+  // Sets the simulation rate and bubble radius based on the size of the data set
   if (studentData.length > 2000) {
     simulationRate = 8000;
+    bubbleRadius = 4;
   } else if (studentData.length > 400) {
-    simulationRate = 5000
-  } else { simulationRate = 4000 }
-  updateTransitionSpeedHoverText(0);
+    simulationRate = 5000;
+    bubbleRadius = 6;
+  } else {
+    simulationRate = 4000;
+    bubbleRadius = 8;
+  };
 
   // Get term codes from dataset
   const termCodes = Object.keys(studentData[0]).filter((k) => re.test(k));
