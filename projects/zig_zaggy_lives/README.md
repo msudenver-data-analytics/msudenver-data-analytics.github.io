@@ -26,4 +26,4 @@ Establishing the logic behind identifying when students drop out, transfer out, 
 
 Finally, work could begin on building the animation. The animation layout was inspired by Nathan Yau’s “A Day in the Life of Americans”. I had never used Javascript before, and so utilized his base code as much as possible to start. By the end of this project, however, the Javascript would look nothing like its original.
 
-Major structural changes from other similar animations found online include a shift away from custom physics functions in favor of working with built-in functionality, a complete rework of the input data (and JS) to function column-wise, rather than row-wise, and the ability to perform data-set switching. 
+Major structural changes from other similar animations found online include a shift away from custom physics functions in favor of working with built-in functionality, a complete rework of the input data (and JS) to function column-wise, rather than row-wise, the ability to perform data-set switching, and the ability to filter down to smaller population subsets. 
