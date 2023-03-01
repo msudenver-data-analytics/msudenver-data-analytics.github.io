@@ -363,6 +363,9 @@ async function loadStudentDataAndInitalizeNodes(fileName) {
     simulationRate = 8000;
     bubbleRadius = 4;
   } else if (studentData.length > 1500) {
+    simulationRate = 7000;
+    bubbleRadius = 4.5;
+  } else if (studentData.length > 1000) {
     simulationRate = 6000;
     bubbleRadius = 5;
   } else if (studentData.length > 400) {
@@ -372,6 +375,7 @@ async function loadStudentDataAndInitalizeNodes(fileName) {
     simulationRate = 4000;
     bubbleRadius = 8;
   };
+  updateTransitionSpeedHoverText(0);
 
   // Get term codes from dataset
   const termCodes = Object.keys(studentData[0]).filter((k) => re.test(k));
