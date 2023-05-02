@@ -351,14 +351,14 @@ function animatorControllerFactory(studentNodes, termCodes, studentX) {
 async function loadStudentDataAndInitalizeNodes(fileName) {
 
   // Wait for D3 to resolve the promise
-  let loadedData = await d3.csv(`./data/${fileName}`, d3.autoType);
+  let loadedData = await d3.csv(`../data/${fileName}`, d3.autoType);
   let studentData = structuredClone(loadedData.filter(studentDataFilter));
   if (studentData.length < 5) {
     studentData = loadedData;
     resetDropdowns();
     alert("Insufficient results to display. Cohort must be at least five students.");
   }
-  // Sets the simulation rate and bubble radius based on the size of the data set
+  // Sets the simulation rate and bubble size based on the size of the data set
   if (studentData.length > 2000) {
     simulationRate = 8000;
     bubbleRadius = 4;
@@ -374,7 +374,7 @@ async function loadStudentDataAndInitalizeNodes(fileName) {
   } else {
     simulationRate = 4000;
     bubbleRadius = 8;
-  };
+  }
   updateTransitionSpeedHoverText(0);
 
   // Get term codes from dataset
